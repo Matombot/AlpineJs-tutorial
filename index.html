@@ -61,9 +61,9 @@
         </div>
         <div class="side">
             <div x-data="{ show: false }">
-                <h3>5. show or hide an element</h3>
+                <h3>5. Show or hide an element</h3>
 
-                <button @click="show=!show">Show</button>
+                <button @click="show=!show" x-html="show ? 'Hide' : 'Show'">Show</button>
                 <div x-show.transition="show">Hello</div>
             </div>
         </div>

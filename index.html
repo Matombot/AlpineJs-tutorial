@@ -30,28 +30,25 @@
             </div>
         </div>
         <div class="side">
-            <div x-data="{ countdown: 60 ,count: false}" x-init="setInterval(function(){
-               countdown--;
-            }, 1000);
-            ">
+            <div x-data="{ countdown: 60}">
                 <h3>3. count down timer</h3>
                 <h1 x-text="countdown"></h1>
-                <button @click="countdown=60">Reset</button>
-                <button @click="count=!count" x-html="count ? 'Stop' : 'Start'">Show</button>
-                
+                <button @click="myStop=setInterval(function(){
+                    countdown--;}, 1000);">Start</button>
+                    <button @click="countdown=60">Reset</button>
+                    <button @click="clearInterval(myStop)">Stop</button>
             </div>
         </div>
         <div class="side">
-            <div x-data="{ countdown: 00,count: false}" x-init="setInterval(function(){
-                countdown++;
-             }, 1000);
-             ">
+            <div x-data="{ countdown: 00,count: false}">
              
                 <h3>4. count up timer</h3>
                 <h1 x-text="countdown"></h1>
-                <button @click="countdown=0" x-init="setInterval(function(){
-                countdown++; }, 0); ">Reset</button>
-                <button @click="count=!count" x-html="count ? 'Stop' : 'Start'">Start</button>
+                <button @click="myStop=setInterval(function(){
+                    countdown++;}, 1000);">Start</button>
+                    <button @click="countdown=0">Reset</button>
+                    <button @click="clearInterval(myStop)">Stop</button>
+                
             </div>
         </div>
         <div class="side">
